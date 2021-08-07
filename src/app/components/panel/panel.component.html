@@ -1,2 +1,21 @@
 <p>panel works!</p>
+<h1>“Provide availability”</h1>
+<!--a routerLink="/admin">Admin</a--> 
+<form [formGroup]="PanelAvailabiltyForm" (ngSubmit)="PanelAvailabiltyForm.valid && OnSubmit()">
 
+<label for="PanelId"> Enter PanelId : </label>
+<input id="PanelId" type="number" formControlName ="PanelId"><br><br><br>
+
+<label for="PanelName"> Enter PanelName: </label>
+<input id="PanelName" type="text" formControlName ="PanelName"><br><br><br>
+
+<label for="PanelSkill"> Enter Panel Skill Set: </label>
+<input id="PanelSkill" type="text" formControlName ="PanelSkill"><br><br><br>
+
+<label for="Date"> Enter your Available Date: </label>
+<input id="Date" type="date" formControlName ="Date"><br><br><br>
+
+<label for="Time"> Enter your Available Time: </label>
+<input id="Time" type="time" formControlName ="Time"><br><br><br>
+
+<input type="submit" value="Submit" />

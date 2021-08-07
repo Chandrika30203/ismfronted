@@ -1,0 +1,22 @@
+<p>admin-form works!</p>
+<h1>Create Requirement</h1>
+<!--a routerLink="/admin">Admin</a-->
+<form [formGroup]="RequirementForm" (ngSubmit)="RequirementForm.valid && OnSubmit()">
+
+<label for="RequirementDetails"> Enter Requirement Details: </label>&nbsp;
+<input id="RequirementDetails" type="text" formControlName ="RequirementDetails"><br><br><br>
+
+<label for="SkillSet"> Enter Skill Set: </label>&nbsp;
+<input id="SkillSet" type="text" formControlName ="SkillSet"><br><br><br>
+
+<label for="StartDate"> Enter Start Date: </label>&nbsp;
+<input id="StartDate" type="date" formControlName ="StartDate"><br><br><br>
+
+<label for="EndDate"> Enter Start Date: </label>&nbsp;
+<input id="EndDate" type="date" formControlName ="EndDate"><br><br><br>
+
+<label for="Numberofcandidates"> Enter Number of candidates: </label>&nbsp;
+<input id="Numberofcandidates" type="number" formControlName ="Numberofcandidates"><br><br><br>
+
+<input type="submit" value="SUBMIT" />
+

@@ -10,6 +10,11 @@ import { ViewSheduleComponent } from './components/view-shedule/view-shedule.com
 import { HrHomeComponent } from './components/hr-home/hr-home.component';
 import { ScheduledInterviewComponent } from './components/scheduled-interview/scheduled-interview.component';
 import { ResheduleComponent } from './components/reshedule/reshedule.component';
+import { AdminFormComponent } from './components/admin-form/admin-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { JobhiringComponent } from './navbar/jobhiring/jobhiring.component';
+import { JobOpeningComponent } from './components/jobhiring/job-opening/job-opening.component';
+import { ViewEditSheduledComponent } from './components/jobhiring/view-edit-sheduled/view-edit-sheduled.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +25,18 @@ import { ResheduleComponent } from './components/reshedule/reshedule.component';
     ViewSheduleComponent,
     HrHomeComponent,
     ScheduledInterviewComponent,
-    ResheduleComponent
+    ResheduleComponent,
+    AdminFormComponent,
+    JobhiringComponent,
+    JobOpeningComponent,
+    ViewEditSheduledComponent
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
