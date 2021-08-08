@@ -1,22 +1,25 @@
-<p>admin-form works!</p>
-<h1>Create Requirement</h1>
-<!--a routerLink="/admin">Admin</a-->
+<h1>Admin Home</h1>
 <form [formGroup]="RequirementForm" (ngSubmit)="RequirementForm.valid && OnSubmit()">
 
-<label for="RequirementDetails"> Enter Requirement Details: </label>&nbsp;
-<input id="RequirementDetails" type="text" formControlName ="RequirementDetails"><br><br><br>
+<label for="requirementDetails"> Enter Requirement Details: </label>&nbsp;
+<input id="requirementDetails" type="text" formControlName ="requirementDetails"><br><br><br>
 
-<label for="SkillSet"> Enter Skill Set: </label>&nbsp;
-<input id="SkillSet" type="text" formControlName ="SkillSet"><br><br><br>
+<!-- <label for="SkillSet"> Enter Skill Set: </label>&nbsp;
+<input id="SkillSet" type="text" formControlName ="SkillSet"><br><br><br> -->
+<select formControlName="skillId">
+    <option [ngValue]="null" disabled>Select skill</option>
+    <option *ngFor="let skill of skillSets" [ngValue]="skill.skillid">{{skill.skill}}</option>
+  </select>
 
-<label for="StartDate"> Enter Start Date: </label>&nbsp;
-<input id="StartDate" type="date" formControlName ="StartDate"><br><br><br>
 
-<label for="EndDate"> Enter Start Date: </label>&nbsp;
-<input id="EndDate" type="date" formControlName ="EndDate"><br><br><br>
+<label for="startDate"> Enter Start Date: </label>&nbsp;
+<input id="startDate" type="date" formControlName ="startDate"><br><br><br>
 
-<label for="Numberofcandidates"> Enter Number of candidates: </label>&nbsp;
-<input id="Numberofcandidates" type="number" formControlName ="Numberofcandidates"><br><br><br>
+<label for="endDate"> Enter Start Date: </label>&nbsp;
+<input id="endDate" type="date" formControlName ="endDate"><br><br><br>
+
+<label for="noOfCandidates"> Enter Number of candidates: </label>&nbsp;
+<input id="noOfCandidates" type="number" formControlName ="noOfCandidates"><br><br><br>
 
 <input type="submit" value="SUBMIT" />
 

@@ -1,2 +1,21 @@
 <app-jobhiring></app-jobhiring>
 <p>view-edit-sheduled works!</p>
+
+<table>
+    <tr>
+        <th *ngFor="let column of headers">
+            {{column}}
+        </th>
+    </tr>
+    <ng-template ngFor let-item [ngForOf]="interviewSheduledDetails">
+    <tr>
+        <td>{{item.panelID}}</td>
+        <td>{{item.candidateID}}</td>
+        <td>{{item.skillID}}</td>
+        <td>{{item.interviewDate}}</td>
+        <td>{{item.interviewTime}}</td>
+        <td>delete/update </td>
+    </tr>
+    </ng-template>
+
+</table>

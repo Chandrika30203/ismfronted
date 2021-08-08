@@ -1,0 +1,30 @@
+<label>Select candidate</label>
+  <select [ngModel]="selectedObj" (ngModelChange)="onChangeObj($event)" name="sel3">
+    <option [ngValue]="null" disabled>Select skill</option>
+    <option [ngValue]="i" *ngFor="let i of candidate">{{i.name}}</option>
+  </select>
+  {{selectedObj | json}}
+
+  <label>Select panel</label>
+  <select [ngModel]="selectedPanelId" (ngModelChange)="onChangepanel($event)">
+    <option [ngValue]="null" disabled>Select skill</option>
+    <option [ngValue]="i" *ngFor="let i of uniquepanelID">{{i}}</option>
+  </select>
+
+  <label>Select Date</label>
+  <select [ngModel]="selectedDate" (ngModelChange)="onChangedate($event)">
+    <option [ngValue]="null" disabled>Select skill</option>
+    <option [ngValue]="i" *ngFor="let i of availableDat">{{i}}</option>
+  </select>
+  {{selectedDate}}
+
+  <label>Select Time</label>
+  <select [ngModel]="selectedTime" (ngModelChange)="onChangetime($event)">
+    <option [ngValue]="null" disabled>Select skill</option>
+    <option [ngValue]="i" *ngFor="let i of availableTime">{{i}}</option>
+  </select>
+
+
+  <button (click)="sheduleInterview()">shedule Interview</button>
+
+  

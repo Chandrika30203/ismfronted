@@ -15,6 +15,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { JobhiringComponent } from './navbar/jobhiring/jobhiring.component';
 import { JobOpeningComponent } from './components/jobhiring/job-opening/job-opening.component';
 import { ViewEditSheduledComponent } from './components/jobhiring/view-edit-sheduled/view-edit-sheduled.component';
+import {HttpClientModule} from '@angular/common/http';
+import { SheduleInterviewComponent } from './components/jobhiring/shedule-interview/shedule-interview.component';
 
 @NgModule({
   declarations: [
@@ -29,14 +31,17 @@ import { ViewEditSheduledComponent } from './components/jobhiring/view-edit-shed
     AdminFormComponent,
     JobhiringComponent,
     JobOpeningComponent,
-    ViewEditSheduledComponent
+    ViewEditSheduledComponent,
+    SheduleInterviewComponent
+    
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

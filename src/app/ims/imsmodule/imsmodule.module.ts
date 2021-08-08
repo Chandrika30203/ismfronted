@@ -11,6 +11,7 @@ import { AdminFormComponent } from 'src/app/components/admin-form/admin-form.com
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ViewEditSheduledComponent } from 'src/app/components/jobhiring/view-edit-sheduled/view-edit-sheduled.component';
 import { JobOpeningComponent } from 'src/app/components/jobhiring/job-opening/job-opening.component';
+import { SheduleInterviewComponent } from 'src/app/components/jobhiring/shedule-interview/shedule-interview.component';
 
 const route: Routes = [
   { path: '', redirectTo: 'admin', pathMatch: 'full' },
@@ -21,7 +22,8 @@ const route: Routes = [
   {path:"adminform",component:AdminFormComponent},{
     path:"jobopening",component:JobOpeningComponent
   },
-  {path:"sheduled",component:ViewEditSheduledComponent}
+  {path:"sheduled",component:ViewEditSheduledComponent},
+  {path:"sheduleInterview",component:SheduleInterviewComponent}
 ];
 
 @NgModule({

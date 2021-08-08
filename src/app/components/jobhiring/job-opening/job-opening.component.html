@@ -1,5 +1,20 @@
 <app-jobhiring></app-jobhiring>
-<p>job-opening works!</p>
-<div>
-    <h1>Hema</h1>
-</div>
+<h1>List of job Openings</h1>
+<table>
+    <tr>
+        <th *ngFor="let column of headers">
+            {{column}}
+        </th>
+    </tr>
+    <ng-template ngFor let-item [ngForOf]="jobOpeningData">
+    <tr>
+        <td>{{item.requirementId}}</td>
+        <td>{{item.requirementDetails}}</td>
+        <td>{{item.skill}}</td>
+        <td>{{item.startDate}}</td>
+        <td>{{item.endDate}}</td>
+        <td> <button (click)="shedule(item.skill)" class="btn btn-outline-primary">Schdule an Interview </button> </td>
+    </tr>
+    </ng-template>
+
+</table>
