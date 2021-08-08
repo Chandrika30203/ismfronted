@@ -1,8 +1,10 @@
 <h1>Admin Home</h1>
 <form [formGroup]="RequirementForm" (ngSubmit)="RequirementForm.valid && OnSubmit()">
 
+  <div class="form-group">
 <label for="requirementDetails"> Enter Requirement Details: </label>&nbsp;
-<input id="requirementDetails" type="text" formControlName ="requirementDetails"><br><br><br>
+<input id="requirementDetails" type="text" formControlName ="requirementDetails" class="form-control"><br><br><br>
+</div>
 
 <!-- <label for="SkillSet"> Enter Skill Set: </label>&nbsp;
 <input id="SkillSet" type="text" formControlName ="SkillSet"><br><br><br> -->
