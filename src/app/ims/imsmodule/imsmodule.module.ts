@@ -12,6 +12,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ViewEditSheduledComponent } from 'src/app/components/jobhiring/view-edit-sheduled/view-edit-sheduled.component';
 import { JobOpeningComponent } from 'src/app/components/jobhiring/job-opening/job-opening.component';
 import { SheduleInterviewComponent } from 'src/app/components/jobhiring/shedule-interview/shedule-interview.component';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { PanelnavComponent } from 'src/app/components/navbar/panelnav/panelnav.component';
+
 
 const route: Routes = [
   { path: '', redirectTo: 'admin', pathMatch: 'full' },
@@ -23,13 +27,18 @@ const route: Routes = [
     path:"jobopening",component:JobOpeningComponent
   },
   {path:"sheduled",component:ViewEditSheduledComponent},
-  {path:"sheduleInterview",component:SheduleInterviewComponent}
+  {path:"sheduleInterview",component:SheduleInterviewComponent},
+  {path:"panelanv",component:PanelnavComponent},
+  {path:"calenderView",component:ScheduledInterviewComponent}
 ];
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule,ReactiveFormsModule,FormsModule,RouterModule.forChild(route)
+    CommonModule,ReactiveFormsModule,FormsModule,RouterModule.forChild(route), CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    })
   ]
 })
 export class ImsmoduleModule { }

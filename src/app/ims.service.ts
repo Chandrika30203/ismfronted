@@ -19,6 +19,8 @@ GET_SKILLS="/ims/getskills";
 GET_PANEL_AVALIBILITY="/ims/pannelavailable/";
 SET_SHEDULEINTERVIEW="/ims/setsheduleInterviewdetail";
 GET_SHEDULEDINTERVIEW="/ims/getallsheduledInterview";
+GET_EMPLOYEEBYID="/ims/findEmployeeByID/";
+SET_PANEL_AVALIBILITY="/ims/setPanelAvailability";
 
   constructor(private http:HttpClient) { }
 
@@ -53,4 +55,17 @@ GET_SHEDULEDINTERVIEW="/ims/getallsheduledInterview";
   getallsheduledInterview():Observable<any>{
     return this.http.get(this.GET_SHEDULEDINTERVIEW);
   }
+
+  findEmployeebyID(userID:String):Observable<any>{
+    return this.http.get(this.GET_EMPLOYEEBYID+userID);
+  }
+
+  setPanelAvability(data:any):Observable<any>
+  {
+    console.log("service");
+    console.log(data);
+    return this.http.post(this.SET_PANEL_AVALIBILITY,data);
+  }
+
+
 }

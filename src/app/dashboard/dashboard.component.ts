@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule,FormsModule, FormGroup,FormControl,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ImsService } from '../ims.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 export class DashboardComponent implements OnInit {
   loginform!:FormGroup;
   userName!:String;
-  constructor(private route:Router) { }
+  constructor(private route:Router, private service:ImsService) { }
 
   ngOnInit(): void {
     this.loginform=new FormGroup({
@@ -19,8 +20,13 @@ export class DashboardComponent implements OnInit {
       });
     }
   OnSubmit(): void{
-    console.log(this.loginform.value);
     this.userName=this.loginform.value.user;
+    this.service.findEmployeebyID(this.userName).subscribe((data)=>{
+      console.log(data);
+      if(data==true)
+      {
+        sessionStorage.setItem("employeeId",this.userName.toString());
+        console.log(this.loginform.value);
      if(this.userName.includes("admin"))     {
         this.route.navigate(["/ims/adminform"]);
      } 
@@ -32,6 +38,14 @@ export class DashboardComponent implements OnInit {
      {
       this.route.navigate(["/ims/panel"]);
      }
+      }
+      else{
+        alert("user is not valid");
+        this.ngOnInit();
+      }
+
+    })
+    
   
   }
 

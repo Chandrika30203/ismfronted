@@ -17,6 +17,9 @@ import { JobOpeningComponent } from './components/jobhiring/job-opening/job-open
 import { ViewEditSheduledComponent } from './components/jobhiring/view-edit-sheduled/view-edit-sheduled.component';
 import {HttpClientModule} from '@angular/common/http';
 import { SheduleInterviewComponent } from './components/jobhiring/shedule-interview/shedule-interview.component';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { PanelnavComponent } from './components/navbar/panelnav/panelnav.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,8 @@ import { SheduleInterviewComponent } from './components/jobhiring/shedule-interv
     JobhiringComponent,
     JobOpeningComponent,
     ViewEditSheduledComponent,
-    SheduleInterviewComponent
+    SheduleInterviewComponent,
+    PanelnavComponent
     
     
   ],
@@ -41,7 +45,11 @@ import { SheduleInterviewComponent } from './components/jobhiring/shedule-interv
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
