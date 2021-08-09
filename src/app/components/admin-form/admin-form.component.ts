@@ -11,6 +11,7 @@ import { ImsService } from 'src/app/ims.service';
   styleUrls: ['./admin-form.component.scss']
 })
 export class AdminFormComponent implements OnInit {
+  bgimageadmin:string = "assets/images/dataentry.jpg";
   RequirementForm!:FormGroup   
   skillSet:Array<string>=[];
   jobOpenings!:JobOpenings;
