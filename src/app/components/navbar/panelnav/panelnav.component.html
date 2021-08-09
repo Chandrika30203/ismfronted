@@ -1,3 +1,8 @@
-<a routerLink="/ims/panel">Mark availability</a>&nbsp;
-<a routerLink="/ims/calenderView">calendar</a>
+<mat-toolbar color="primary">
+<a mat-button routerLink="/ims/panel">Mark availability</a>&nbsp;
+<a mat-button routerLink="/ims/calenderView">calendar</a>
+<div class="spacer"></div>
+      
+<a routerLink="/Dashboard" class="navbar-brand pull-right" mat-raised-button color="accent">Log Out</a>
+</mat-toolbar>
 <router-outlet></router-outlet>

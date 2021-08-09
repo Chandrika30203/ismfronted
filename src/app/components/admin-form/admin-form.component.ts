@@ -11,6 +11,7 @@ import { ImsService } from 'src/app/ims.service';
   styleUrls: ['./admin-form.component.scss']
 })
 export class AdminFormComponent implements OnInit {
+  bgimageadmin:string = "assets/images/dataentry.jpg";
   RequirementForm!:FormGroup   
   skillSet:Array<string>=[];
   jobOpenings!:JobOpenings;
@@ -80,7 +81,8 @@ OnSubmit(): void{
   console.log(this.RequirementForm.value);
   this.savedata(this.jobOpenings);
  
-  this.skillSet=[];
+  alert("sucessfuly updated");
+  this.RequirementForm.reset();
   
 
 }

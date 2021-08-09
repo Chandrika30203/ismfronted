@@ -1,27 +1,39 @@
-<h1>Admin Home</h1>
+<div class="adminclass">
+  <nav class="navbar navbar-black" style="background-color: #e3f2fd;">
+    <a class="navbar-brand" href="http://localhost:4200/ims/adminform">Create Requirement</a>
+    <a href="http://localhost:4200/Dashboard" class="navbar-brand pull-right"><strong>Logout</strong></a>
+  </nav>
+<div class="container">
 <form [formGroup]="RequirementForm" (ngSubmit)="RequirementForm.valid && OnSubmit()">
 
-  <div class="form-group">
+<div class="form-group">
 <label for="requirementDetails"> Enter Requirement Details: </label>&nbsp;
-<input id="requirementDetails" type="text" formControlName ="requirementDetails" class="form-control"><br><br><br>
+<input id="requirementDetails" type="text" formControlName ="requirementDetails" class="form-control"><br>
 </div>
-
 <!-- <label for="SkillSet"> Enter Skill Set: </label>&nbsp;
 <input id="SkillSet" type="text" formControlName ="SkillSet"><br><br><br> -->
-<select formControlName="skillId">
+<label for="SkillSet"> Enter Skill Set: </label>&nbsp;<br>
+<select formControlName="skillId" class="form-control">
     <option [ngValue]="null" disabled>Select skill</option>
     <option *ngFor="let skill of skillSets" [ngValue]="skill.skillid">{{skill.skill}}</option>
   </select>
 
+<br><br><br>
+<label for="startDate"> Enter Start Date: </label>&nbsp;<br>
+<input id="startDate" type="date" formControlName ="startDate" class="form-control"><br><br><br>
 
-<label for="startDate"> Enter Start Date: </label>&nbsp;
-<input id="startDate" type="date" formControlName ="startDate"><br><br><br>
+<label for="endDate"> Enter End Date: </label>&nbsp;<br>
+<input id="endDate" type="date" formControlName ="endDate" class="form-control"><br><br><br>
 
-<label for="endDate"> Enter Start Date: </label>&nbsp;
-<input id="endDate" type="date" formControlName ="endDate"><br><br><br>
+<label for="noOfCandidates"> Enter Number of candidates: </label>&nbsp;<br>
+<input id="noOfCandidates" type="number" formControlName ="noOfCandidates" class="form-control"><br><br><br>
 
-<label for="noOfCandidates"> Enter Number of candidates: </label>&nbsp;
-<input id="noOfCandidates" type="number" formControlName ="noOfCandidates"><br><br><br>
+<input  type="button" class="btn btn-success" value="SUBMIT" /><br><br>
+</form>
+</div>
 
-<input type="submit" value="SUBMIT" />
+<!--div>
+  <img [src]="bgimageadmin" alt="">
+  </div-->
 
+  </div>

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from'@angular/material/button';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -20,6 +21,9 @@ import { SheduleInterviewComponent } from './components/jobhiring/shedule-interv
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { PanelnavComponent } from './components/navbar/panelnav/panelnav.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -49,7 +53,9 @@ import { PanelnavComponent } from './components/navbar/panelnav/panelnav.compone
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory,
-    })
+    }),
+    BrowserAnimationsModule,
+    MatToolbarModule, MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
