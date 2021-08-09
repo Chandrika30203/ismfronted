@@ -1,20 +1,25 @@
-<app-jobhiring></app-jobhiring>
-<h1>List of job Openings</h1>
-<table>
+<div class="adminclass">
+<app-jobhiring></app-jobhiring><br>
+<h2>List of job Openings</h2>
+
+<table class="table table-striped">
+        <thead class="thead-dark">
     <tr>
         <th *ngFor="let column of headers">
             {{column}}
         </th>
     </tr>
     <ng-template ngFor let-item [ngForOf]="jobOpeningData">
-    <tr>
+    <!--tr>
         <td>{{item.requirementId}}</td>
         <td>{{item.requirementDetails}}</td>
         <td>{{item.skill}}</td>
         <td>{{item.startDate}}</td>
         <td>{{item.endDate}}</td>
-        <td> <button (click)="shedule(item.skill)" class="btn btn-outline-primary">Schdule an Interview </button> </td>
-    </tr>
+        <td> <button (click)="shedule(item.skill)" class="btn btn-outline-primary">Schedule an Interview </button> </td>
+    </tr-->
     </ng-template>
 
+        </thead>
 </table>
+</div>

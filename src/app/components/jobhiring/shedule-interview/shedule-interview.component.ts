@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./shedule-interview.component.scss']
 })
 export class SheduleInterviewComponent implements OnInit {
+  ScheduleInterviewform!:FormGroup;
   candidate = [
     { candidateId: 1,currentlevel:0,name: "",skills:""},
   ];

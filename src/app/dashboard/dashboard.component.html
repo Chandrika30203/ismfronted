@@ -1,4 +1,9 @@
-
+<!--a href="http://localhost:4200/Dashboard" class="navbar-brand pull-right" mat-raised-button color="accent">Log Out</a-->
+<div class="adminclass">
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+     
+        <h1>  <img src="../../assets/images/icon.png" width="50" height="50" class="d-inline-block align-side" alt="">Interview Management System</h1>
+</nav>
 
 <div class="container">
     <div class="row">
@@ -8,29 +13,38 @@
                 <i class="fa fa-key" aria-hidden="true"></i>
             </div>
             <div class="col-lg-12 login-title">
-                LOGIN PAGE
+               <!--h1 class="navbar-brand pull-left" >LOGIN PAGE</h1-->
             </div>
 
             <div class="col-lg-12 login-form">
                 <div class="col-lg-12 login-form">
                     <form [formGroup]="loginform" (ngSubmit)="loginform.valid && OnSubmit()">
-
-                        <label for="user">Enter user Name: </label>
-                        <input id="user" type="text" formControlName="user">
-                          
-                        <label for="pass">Enter Password: </label>
-                        <input id="pass" type="password" formControlName="pass">
-                    
-                    
-                     
-
+<br><br><br>
+<div class="form-floating mb-3">
+    <label for="floatingInput">Username</label>
+    <input id="user" type="text" class="form-control" formControlName="user">
+    <br>
+  </div>
+  <div class="form-floating">
+    <label for="floatingPassword">Password</label>
+    <input type="password" class="form-control" id="pass" formControlName="pass">
+    
+  </div>
+                       <!--h2> <label for="user">Enter user Name:&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</label></h2-->
+                        <!--input id="user" type="text" formControlName="user">
+                         <br><br>
+                         <h2>
+                        <label for="pass">Enter Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label></h2>
+                        <input id="pass" type="password" formControlName="pass"-->
+<br>
                         <div class="col-lg-12 loginbttm">
                             <div class="col-lg-6 login-btm login-text">
                                 <!-- Error Message -->
-                            </div>
+                            </div><br><br>
                             <div class="col-lg-6 login-btm login-button">
-                                <button type="submit" class="btn btn-outline-primary">LOGIN</button>
-                            </div>
+                                <input type="submit" value="Submit"class="btn btn-success" />
+                                <!--button  type="button"  class="btn btn-success">LOGIN<br-->
+                            </div><br><br><br><br>
                         </div>
                     </form>
                 </div>
@@ -38,7 +52,13 @@
             <div class="col-lg-3 col-md-2"></div>
         </div>
     </div>
-
-
-
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<!-- Footer -->
+<footer class="page-footer font-small cyan darken-3">
+    <div class="footer-copyright text-center py-3">© 2021 Copyright:
+      <a href="http://localhost:4200/Dashboard"> IMS PLATFORM </a>
+    </div>
+</footer>
+  <br>
 <router-outlet></router-outlet>

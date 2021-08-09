@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from'@angular/material/button';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -17,6 +18,7 @@ import { JobOpeningComponent } from './components/jobhiring/job-opening/job-open
 import { ViewEditSheduledComponent } from './components/jobhiring/view-edit-sheduled/view-edit-sheduled.component';
 import {HttpClientModule} from '@angular/common/http';
 import { SheduleInterviewComponent } from './components/jobhiring/shedule-interview/shedule-interview.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { SheduleInterviewComponent } from './components/jobhiring/shedule-interv
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatToolbarModule, MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
