@@ -9,7 +9,7 @@ import { Router} from '@angular/router';
   styleUrls: ['./job-opening.component.scss']
 })
 export class JobOpeningComponent implements OnInit {
-  headers = ["Reuirement ID", "Requirement details ","Skills","Starte Date", " Endate Date ", "Action"];
+  headers = ["Reuirement ID", "Requirement details ","Require Skills Set","No. of Candidate requires","Starte Date", " Endate Date ", "Action"];
   jobOpeningData!:any;
   constructor(private service:ImsService,private route:Router) { }
 

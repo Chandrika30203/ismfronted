@@ -18,7 +18,7 @@ export class ViewEditSheduledComponent implements OnInit {
   ngOnInit(): void {
     this.serive.getallsheduledInterview().subscribe(data=>{
       this.interviewSheduledDetails=data;
-      this.route.navigate(["/ims/sheduleInterview"]);
+      // this.route.navigate(["/ims/sheduleInterview"]);
 
     })
   }

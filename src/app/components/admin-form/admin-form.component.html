@@ -1,7 +1,7 @@
 <div class="adminclass">
   <nav class="navbar navbar-black" style="background-color: #e3f2fd;">
-    <a class="navbar-brand" href="http://localhost:4200/ims/adminform">Create Requirement</a>
-    <a href="http://localhost:4200/Dashboard" class="navbar-brand pull-right"><strong>Logout</strong></a>
+    <a class="navbar-brand" routerLink="/ims/adminform">Create Requirement</a>
+    <a routerLink="/Dashboard" class="navbar-brand pull-right"><strong>Logout</strong></a>
   </nav>
 <div class="container">
 <form [formGroup]="RequirementForm" (ngSubmit)="RequirementForm.valid && OnSubmit()">
@@ -28,7 +28,7 @@
 <label for="noOfCandidates"> Enter Number of candidates: </label>&nbsp;<br>
 <input id="noOfCandidates" type="number" formControlName ="noOfCandidates" class="form-control"><br><br><br>
 
-<input  type="button" class="btn btn-success" value="SUBMIT" /><br><br>
+<input  type="submit" class="btn btn-success" value="submit" /><br><br>
 </form>
 </div>
 
