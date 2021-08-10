@@ -15,6 +15,7 @@ import { SheduleInterviewComponent } from 'src/app/components/jobhiring/shedule-
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { PanelnavComponent } from 'src/app/components/navbar/panelnav/panelnav.component';
+import { AdminviewComponent } from 'src/app/components/adminview/adminview.component';
 
 
 const route: Routes = [
@@ -29,7 +30,8 @@ const route: Routes = [
   {path:"sheduled",component:ViewEditSheduledComponent},
   {path:"sheduleInterview",component:SheduleInterviewComponent},
   {path:"panelanv",component:PanelnavComponent},
-  {path:"calenderView",component:ScheduledInterviewComponent}
+  {path:"calenderView",component:ScheduledInterviewComponent},
+  {path:"adminview",component:AdminviewComponent}
 ];
 
 @NgModule({

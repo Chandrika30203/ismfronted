@@ -1,0 +1,31 @@
+<div class="adminclass">
+    <nav class="navbar navbar-black" style="background-color: #e3f2fd;">
+      <a class="navbar-brand" routerLink="/ims/adminform">Create Requirement</a>
+      <a class="navbar-brand" routerLink="/ims/adminview">View Requirement</a>
+      <a routerLink="/Dashboard" class="navbar-brand pull-right"><strong>Logout</strong></a>
+    </nav>
+
+        <h2>List of Requirements</h2>
+        
+        <table class="table table-striped">
+                <thead class="thead-dark">
+            <tr>
+                <th *ngFor="let column of headers">
+                    {{column}}
+                </th>
+            </tr>
+            <ng-template ngFor let-item [ngForOf]="jobOpeningData">
+            <tr>
+                <td>{{item.requirementId}}</td>
+                <td>{{item.requirementDetails}}</td>
+                <td>{{item.skill}}</td>
+                <td>{{item.noOfCandidates}}</td>
+                <td>{{item.startDate}}</td>
+                <td>{{item.endDate}}</td>
+                
+            </tr>
+            </ng-template>
+        
+                </thead>
+        </table>
+</div>

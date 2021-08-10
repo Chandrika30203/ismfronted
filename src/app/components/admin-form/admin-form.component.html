@@ -1,37 +1,50 @@
 <div class="adminclass">
   <nav class="navbar navbar-black" style="background-color: #e3f2fd;">
     <a class="navbar-brand" routerLink="/ims/adminform">Create Requirement</a>
+    <a class="navbar-brand" routerLink="/ims/adminview">View Requirement</a>
     <a routerLink="/Dashboard" class="navbar-brand pull-right"><strong>Logout</strong></a>
   </nav>
-<div class="container">
+<!--div class="container"-->
 <form [formGroup]="RequirementForm" (ngSubmit)="RequirementForm.valid && OnSubmit()">
 
-<div class="form-group">
-<label for="requirementDetails"> Enter Requirement Details: </label>&nbsp;
-<input id="requirementDetails" type="text" formControlName ="requirementDetails" class="form-control"><br>
-</div>
+<div class="form-group row">
+<label for="requirementDetails"  class="col-sm-2 col-form-label" >Requirement Details: </label>
+<div class="col-sm-5">
+<input id="requirementDetails" type="text" formControlName ="requirementDetails" class="form-control"/>
+</div></div><br><br><br>
 <!-- <label for="SkillSet"> Enter Skill Set: </label>&nbsp;
 <input id="SkillSet" type="text" formControlName ="SkillSet"><br><br><br> -->
-<label for="SkillSet"> Enter Skill Set: </label>&nbsp;<br>
+
+<div class="form-group row">
+<label for="SkillSet" class="col-sm-2 col-form-label"> Skill Set: </label>
+<div class="col-sm-5">
 <select formControlName="skillId" class="form-control">
-    <option [ngValue]="null" disabled>Select skill</option>
+    <option [ngValue]="null" disabled> Skills</option>
     <option *ngFor="let skill of skillSets" [ngValue]="skill.skillid">{{skill.skill}}</option>
-  </select>
-
-<br><br><br>
-<label for="startDate"> Enter Start Date: </label>&nbsp;<br>
-<input id="startDate" type="date" formControlName ="startDate" class="form-control"><br><br><br>
-
-<label for="endDate"> Enter End Date: </label>&nbsp;<br>
-<input id="endDate" type="date" formControlName ="endDate" class="form-control"><br><br><br>
-
-<label for="noOfCandidates"> Enter Number of candidates: </label>&nbsp;<br>
-<input id="noOfCandidates" type="number" formControlName ="noOfCandidates" class="form-control"><br><br><br>
-
-<input  type="submit" class="btn btn-success" value="submit" /><br><br>
-</form>
+  </select></div>
+</div><br><br><br>
+<div class="form-group row">
+<label for="startDate" class="col-sm-2 col-form-label"> Start Date: </label>
+<div class="col-sm-5">
+<input id="startDate" type="date" formControlName ="startDate" class="form-control"/><br><br><br>
 </div>
+</div>
+<div class="form-group row">
+<label for="endDate" class="col-sm-2 col-form-label">End Date: </label>
+<div class="col-sm-5">
+<input id="endDate" type="date" formControlName ="endDate" class="form-control"/><br><br><br>
+</div></div>
+<div class="form-group row">
+<label for="noOfCandidates" class="col-sm-2 col-form-label">Number of candidates: </label>
+<div class="col-sm-5">
+<input id="noOfCandidates" type="number" formControlName ="noOfCandidates" class="form-control"><br><br><br>
+</div></div>
+</form>
+<!--/div-->
+<input class="btn btn-primary" type="reset" value="Reset"/>&nbsp;&nbsp;&nbsp;
 
+<input class="btn btn-success" type="submit"  value="submit" />
+<br><br><br>
 <!--div>
   <img [src]="bgimageadmin" alt="">
   </div-->

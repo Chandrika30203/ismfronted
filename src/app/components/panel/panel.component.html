@@ -1,18 +1,28 @@
-<app-panelnav></app-panelnav>
-<h1>Set Availability</h1>
+<div class="adminclass">
+<app-panelnav></app-panelnav><br>
+<h2>Set Availability</h2><br>
 <!--a routerLink="/admin">Admin</a--> 
 <form [formGroup]="PanelAvailabiltyForm" (ngSubmit)="PanelAvailabiltyForm.valid && OnSubmit()">
 
-    <div class="form-group">
-<label for="panelid"> Enter PanelId : </label>
-<input id="panelid" type="text" formControlName ="panelId" value="{{employeeId}}">
-</div>
-<div class="form-group">
-<label for="availableDate"> Enter your Available Date: </label>
-<input id="availableDate" type="Date" formControlName ="panelavailabledate">
-</div>
-<div class="form-group">
-<label for="availableTime"> Enter your Available Time: </label>
-<input id="availableTime" type="Time" formControlName ="panelavailabletime">
-</div>
-<input type="submit" value="Submit" />
+<div class="form-group row">
+<label for="panelid" class="col-sm-2 col-form-label"> PanelId : </label>
+<div class="col-sm-5">
+<input id="panelid" type="text" formControlName ="panelId" class="form-control" value="{{employeeId}}">
+</div></div><br><br><br>
+
+<div class="form-group row">
+<label for="availableDate" class="col-sm-2 col-form-label"> Available Date: </label>
+<div class="col-sm-5">
+<input id="availableDate" type="Date" class="form-control" formControlName ="panelavailabledate">
+</div></div><br><br><br>
+
+<div class="form-group row">
+<label for="availableTime" class="col-sm-2 col-form-label">Available Time: </label>
+<div class="col-sm-5">
+<input id="availableTime" type="Time" class="form-control" formControlName ="panelavailabletime">
+</div></div><br><br><br>
+
+<input class="btn btn-success" type="submit" value="Submit" />
+<br><br><br><br><br>
+<br><br><br><br><br>
+<br><br><br><br><br>
