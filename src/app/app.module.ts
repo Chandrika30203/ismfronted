@@ -23,6 +23,7 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { PanelnavComponent } from './components/navbar/panelnav/panelnav.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AdminviewComponent } from './components/adminview/adminview.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     JobOpeningComponent,
     ViewEditSheduledComponent,
     SheduleInterviewComponent,
-    PanelnavComponent
+    PanelnavComponent,
+    AdminviewComponent
     
     
   ],

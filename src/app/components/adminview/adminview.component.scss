@@ -18,3 +18,18 @@ span {
     display: table-cell;
     padding: 0 0 0 10px
 }*/
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+table tr:nth-child(odd) {
+    background-color: lightblue;
+}
+
+table tr:nth-child(even) {
+    background-color:white;
+}
