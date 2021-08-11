@@ -17,7 +17,7 @@ export class PanelComponent implements OnInit {
 
   ngOnInit(): void {
     this.employeeId=sessionStorage.getItem("employeeId");
-    sessionStorage.clear();
+    // sessionStorage.clear();
     this.PanelAvailabiltyForm=new FormGroup({
       panelId:new FormControl(this.employeeId,Validators.required),
       panelavailabledate:new FormControl("",Validators.required),

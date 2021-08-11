@@ -1,4 +1,11 @@
 <app-panelnav></app-panelnav>
+<form class="form-group" [formGroup]="PanelAvailabiltyForm" (ngSubmit)="PanelAvailabiltyForm.valid && OnSubmit()">
+    <div class="form-control">
+        <input id="availableDate" type="date" formControlName ="panelavailabledate">
+        <input id="availableDate2" type="time" formControlName ="panelavailabletime">
+        <input type="submit" value="Select free slote" />
+    </div>
+</form>
 <div class="row text-center">
 
     <div class="col-md-4">

@@ -6,7 +6,7 @@
 
       <!--form [formGroup]="ScheduleInterviewform" >
         <div class="form-group"-->
-<label>Select candidate</label>&nbsp;&nbsp;&nbsp;
+<label>candidate</label>&nbsp;&nbsp;&nbsp;
 
   <select class="form-select-color: primary" aria-label="Default select example" [ngModel]="selectedObj" (ngModelChange)="onChangeObj($event)" name="sel3">
     <option [ngValue]="null"  formControlName="ScheduleInterviewform" class="form-control" >Select Candidate</option>
@@ -15,23 +15,24 @@
   </select>
 
 <br><br>
-  <label>Select panel</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <label>panel</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <select class="form-select-color: primary" aria-label="Default select example" [ngModel]="selectedPanelId" (ngModelChange)="onChangepanel($event)">
-    <option [ngValue]="null" disabled>Select skill</option>
+    <option [ngValue]="null" disabled>Select panel</option>
     <option [ngValue]="i" *ngFor="let i of uniquepanelID">{{i}}</option>
   </select>
+  <br><br>
+  <input  type="text" class="col-sm-10" readonly class="form-control-plaintext"  placeholder="Panel Name.." value="{{panelname}}"/>
 <br><br>
-  <label>Select Date</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <label>Date</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <select class="form-select-color: primary" aria-label="Default select example" [ngModel]="selectedDate" (ngModelChange)="onChangedate($event)">
     <option [ngValue]="null" disabled>Select Date</option>
-    <option [ngValue]="i" *ngFor="let i of availableDat">{{i}}</option>
+    <option [ngValue]="i" *ngFor="let i of uniqueavailabledate">{{i}}</option>
   </select>
-
 <br><br>
-  <label>Select Time</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <label>Time</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <select class="form-select-color: primary" aria-label="Default select example" [ngModel]="selectedTime" (ngModelChange)="onChangetime($event)">
     <option [ngValue]="null" >Select Time</option>
-    <option [ngValue]="i" *ngFor="let i of availableTime">{{i}}</option>
+    <option [ngValue]="i" *ngFor="let i of uniqueavailabletime">{{i}}</option>
   </select>
 <br><br><br>
   <button type="button" class="btn btn-success"(click)="sheduleInterview()">Schedule Interview</button><br><br><br><br><br><br><br><br><br>

@@ -21,6 +21,9 @@ SET_SHEDULEINTERVIEW="/ims/setsheduleInterviewdetail";
 GET_SHEDULEDINTERVIEW="/ims/getallsheduledInterview";
 GET_EMPLOYEEBYID="/ims/findEmployeeByID/";
 SET_PANEL_AVALIBILITY="/ims/setPanelAvailability";
+GET_PANELEVENTS="/ims/getpanelallEvents/";
+GET_PANELAVAILABLE="/ims/getpanelavailableDate/";
+DELETE_PANELAVAILABLEID="/ims/deletepanelavailablity/";
 
   constructor(private http:HttpClient) { }
 
@@ -67,5 +70,17 @@ SET_PANEL_AVALIBILITY="/ims/setPanelAvailability";
     return this.http.post(this.SET_PANEL_AVALIBILITY,data);
   }
 
+  getpanelEvent(panelId:string):Observable<any>
+  {
+    return this.http.get(this.GET_PANELEVENTS+panelId)
+  }
+  getpanelavailabledate(panelId:string):Observable<any>
+  {
+      return this.http.get(this.GET_PANELAVAILABLE+panelId);
+  }
+
+  deletepanelavailability(id:number):Observable<any>{
+        return this.http.delete(this.DELETE_PANELAVAILABLEID+id);
+  }
 
 }

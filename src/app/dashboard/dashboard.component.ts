@@ -25,18 +25,20 @@ export class DashboardComponent implements OnInit {
     this.userName=this.loginform.value.user;
     this.service.findEmployeebyID(this.userName).subscribe((data)=>{
       console.log(data);
-      if(data==true)
+     
+      if(data!=null)
       {
+        console.log("inside")
         sessionStorage.setItem("employeeId",this.userName.toString());
         console.log(this.loginform.value);
-     if(this.userName.includes("admin"))     {
+     if(data.role=="admin")     {
         this.route.navigate(["/ims/adminform"]);
      } 
-     else if(this.userName.includes("hr"))
+     else if(data.role=="hr")
      {
       this.route.navigate(["/ims/jobopening"]);
      }
-     else if(this.userName.includes("pl"))
+     else if(data.role=="panel")
      {
       this.route.navigate(["/ims/panel"]);
      }

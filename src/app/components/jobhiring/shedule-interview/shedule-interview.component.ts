@@ -27,6 +27,12 @@ export class SheduleInterviewComponent implements OnInit {
   uniquepanelID=[];
   hiringForm!:FormGroup;
   panelavailableID=0;
+  uniqueavailabledate=[];
+  uniqueavailabletime=[];
+  duplicateDate=[];
+  duplicateTime=[];
+  listofTime=[];
+  panelname="";
 
   constructor(private service:ImsService,private route:Router) { }
 
@@ -48,7 +54,15 @@ onChangeObj(newObj:any) {
 this.skillId=this.selectedObj.skill;
 }
 onChangedate(availabledate:String):void{
+  this.availableTime=[];
   this.selectedDate=availabledate;
+  this.pannelDetails.forEach(x=>{
+    if(x["panelId"]==this.selectedPanelId && x["panelavailabledate"]==this.selectedDate){
+    this.availableTime.push(x["panelavailabletime"]);
+    console.log(x["panelavailabletime"]);
+    }
+  })
+  this.uniqueavailabletime=Array.from(new Set(this.availableTime));
   console.log(this.selectedDate);
 }
 onChangetime(availableTime:String):void{
@@ -58,15 +72,21 @@ onChangetime(availableTime:String):void{
 
 
 onChangepanel(availablepanel:number):void{
+  console.log("changed panel")
   this.selectedPanelId=availablepanel;
   this.availableDat=[];
   this.availableTime=[];
   this.pannelDetails.forEach(x=>{
-    if(x["panelId"]==this.selectedPanelId)
+    if(x["panelId"]==this.selectedPanelId){
+        this.panelname=x["employeename"];
     this.availableDat.push(x["panelavailabledate"]);
-    this.availableTime.push(x["panelavailabletime"]);
+    //this.availableTime.push(x["panelavailabletime"]);
     console.log(x["panelavailabledate"]);
+    }
   })
+  this.uniqueavailabledate=Array.from(new Set(this.availableDat));
+   // this.uniqueavailabletime=Array.from(new Set(this.availableTime));
+
 }
 
 
@@ -77,8 +97,12 @@ getPanel(curentlevel:number):void{
     this.pannelDetails=data;
     this.pannelDetails.forEach(x=>{
       this.panelID.push(x["panelId"]);
+     // this.duplicateDate.push(x["panelavailabledate"]);
+      // this.listofTime.push(x["panelavailabletime"]);
+
     })
     this.uniquepanelID=Array.from(new Set(this.panelID));
+    
    
     console.log(this.pannelDetails);
   })
@@ -107,10 +131,33 @@ sheduleInterview():void{
   this.service.setSheduleInterview(this.interviewShedule).subscribe(data=>{
       console.log(data);
   })
+  this.service.deletepanelavailability(this.panelavailableID).subscribe((data)=>{
+    alert("sucessfuly");
+  })
+ 
+  this.uniqueavailabledate=[];
+  this.uniqueavailabletime=[];
+  this.uniquepanelID=[];
+  this.pannelDetails=[];
+   this.availableTime=[];
+   this.panelID=[];
+   this.panelname="";
+   this.selectedObj="";
+   this.candidate=[
+    { candidateId: 1,currentlevel:0,name: "",skills:""},
+  ];
+  this.ngOnInit();
+
+
   console.log("sucessful");
   this.hiringForm.removeControl;
-  this.route.navigate(["/ims/sheduled"]);
+ 
+  // this.route.navigate(["/ims/sheduled"]);
   
+}
+ngOnDestroy():void{
+console.log("destroy");
+
 }
 
 

@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ViewEditSheduledComponent implements OnInit {
   interviewSheduledDetails:Array<InterviewShedule>=[];
-  headers = ["PanelID", "CandidateID ","SkillID","Interview Date", "Interview Time", "Action"];
+  headers = ["Panel Name", "Candidate Name ","Skill Set","Interview Date", "Interview Time", "Action"];
   route: any;
 
   constructor(private serive:ImsService ) { }
